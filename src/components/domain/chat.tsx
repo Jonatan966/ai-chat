@@ -34,7 +34,7 @@ export function Chat() {
         <ScrollArea className=" h-[600px] w-full pr-4">
           {messages.map((message) => (
             <div
-              className="flex gap-3 text-slate-600 text-sm mb-4"
+              className="flex gap-3 text-slate-300 text-sm mb-4"
               key={message.id}
             >
               <Avatar>
@@ -52,7 +52,7 @@ export function Chat() {
               </Avatar>
 
               <p className="leading-relaxed">
-                <span className="block font-bold text-slate-700">
+                <span className="block font-bold text-slate-400">
                   {message.role === "user" ? "Usuário" : "AI"}:
                 </span>
                 {message.content}
