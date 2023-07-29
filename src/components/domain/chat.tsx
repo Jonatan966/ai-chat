@@ -29,7 +29,7 @@ export function Chat() {
         <CardDescription>
           Usando a{" "}
           <a href="https://sdk.vercel.ai" target="_blank">
-            Vercel SDK
+            Vercel AI SDK
           </a>{" "}
           para criar um chat bot.
         </CardDescription>
