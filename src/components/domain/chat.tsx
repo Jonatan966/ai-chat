@@ -1,6 +1,7 @@
 "use client";
 
 import { useChat } from "ai/react";
+import ReactMarkdown from "react-markdown";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -24,9 +25,13 @@ export function Chat() {
   return (
     <Card className="w-[440px]">
       <CardHeader>
-        <CardTitle>Chat AI</CardTitle>
+        <CardTitle>AI Chat</CardTitle>
         <CardDescription>
-          Using Vercel SDK to create a chat bot.
+          Usando a{" "}
+          <a href="https://sdk.vercel.ai" target="_blank">
+            Vercel SDK
+          </a>{" "}
+          para criar um chat bot.
         </CardDescription>
       </CardHeader>
 
@@ -55,7 +60,7 @@ export function Chat() {
                 <span className="block font-bold text-slate-400">
                   {message.role === "user" ? "Usuário" : "AI"}:
                 </span>
-                {message.content}
+                <ReactMarkdown>{message.content}</ReactMarkdown>
               </p>
             </div>
           ))}
@@ -65,13 +70,13 @@ export function Chat() {
       <CardFooter>
         <form className="w-full flex gap-2" onSubmit={handleSubmit}>
           <Input
-            placeholder="How can I help you?"
+            placeholder="Como posso te ajudar?"
             value={input}
             onChange={handleInputChange}
             disabled={isLoading}
           />
           <Button type="submit" disabled={isLoading}>
-            Send
+            Enviar
           </Button>
         </form>
       </CardFooter>
